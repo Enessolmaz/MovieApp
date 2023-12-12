@@ -4,15 +4,13 @@ import { DB_CONNECT } from "./db.js";
 import route from "./routes/route.js";
 import * as dotenv from "dotenv";
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
 dotenv.config();
 
-app.use(express.json());
-
 DB_CONNECT();
-
 
 const PORT = 3004;
 
