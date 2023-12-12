@@ -5,11 +5,7 @@ import route from "./routes/route.js";
 import * as dotenv from "dotenv";
 
 const corsOptions = {
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Content-Type": "application/json",
-    dataType: "application/json",
-  },
+  origin: "*",
 };
 
 const app = express();
