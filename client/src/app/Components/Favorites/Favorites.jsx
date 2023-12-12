@@ -23,7 +23,7 @@ const Favorites = () => {
     const username = localStorage.getItem("username");
     const getData = async () => {
       await axios
-        .post("http://localhost:3004/api/addFavorites", {
+        .post(process.env.NEXT_PUBLIC_API + "/addFavorites", {
           username,
         })
         .then((res) => {
@@ -53,7 +53,7 @@ const Favorites = () => {
     setDeleteLoading(true);
     if (username) {
       await axios
-        .post("http://localhost:3004/api/addFavorites", {
+        .post(process.env.NEXT_PUBLIC_API + "/addFavorites", {
           username,
           id: item.product_id,
         })
