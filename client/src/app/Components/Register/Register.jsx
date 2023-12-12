@@ -20,10 +20,17 @@ const Register = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     await axios
-      .post(process.env.NEXT_PUBLIC_API + "/createUser", {
-        username: user.username,
-        password: user.password,
-      })
+      .post(
+        process.env.NEXT_PUBLIC_API + "/createUser",
+        {
+          username: user.username,
+          password: user.password,
+        },
+        {
+          withCredentials: true, // CORS politikalarını aşmak için eklenen seçenek
+          crossDomain: true, // CORS politikalarını aşmak için eklenen seçenek
+        }
+      )
       .then((res) => {
         if (res.data.status === "success") {
           toastSuccess(res.data.msg);
