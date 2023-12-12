@@ -7,6 +7,7 @@ import { RiFilmFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { setUserData, setUserWishlist } from "@/app/Redux/User";
+import { toast, ToastContainer } from "react-toastify";
 
 const Series = () => {
   const [allSeries, setAllSeries] = useState([]);
@@ -14,6 +15,7 @@ const Series = () => {
   const dispatch = useDispatch();
   const username = useSelector((state) => state.user.username);
   const [loading, setLoading] = useState(false);
+  const toastError = (msg) => toast.error(msg);
 
   console.log(process.env.NEXT_PUBLIC_DB);
 
@@ -56,7 +58,7 @@ const Series = () => {
           setNowMatchedItems(res.data.product);
         });
     } else {
-      alert("Diziyi Kaydetmek için Giriş Yapınız");
+      toastError("Diziyi Kaydetmek için Giriş Yapınız");
     }
   };
 
@@ -70,6 +72,13 @@ const Series = () => {
 
   return (
     <div className="lg:p-8 flex flex-col gap-6 ">
+      <ToastContainer
+        position="top-center"
+        autoClose={250}
+        hideProgressBar={true}
+        closeOnClick
+        theme="dark"
+      />
       <span className="text-2xl">Recommended Series For You</span>
       {loading ? (
         ""
