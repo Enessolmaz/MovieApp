@@ -1,6 +1,13 @@
 const getSeries = async () => {
   const data = await fetch(
-    "https://api.themoviedb.org/3/trending/tv/day?api_key=c62349385c4fc0200af204fcb3219d86&language=en-US"
+    "https://api.themoviedb.org/3/trending/tv/day?api_key=c62349385c4fc0200af204fcb3219d86&language=en-US",
+    {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+        dataType: "application/json",
+      },
+    }
   ).then((item) => {
     return item.json();
   });
