@@ -20,20 +20,10 @@ const Register = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     await axios
-      .post(
-        process.env.NEXT_PUBLIC_API + "/createUser",
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-            dataType: "application/json",
-          },
-        },
-        {
-          username: user.username,
-          password: user.password,
-        }
-      )
+      .post(process.env.NEXT_PUBLIC_API + "/createUser", {
+        username: user.username,
+        password: user.password,
+      })
       .then((res) => {
         if (res.data.status === "success") {
           toastSuccess(res.data.msg);
