@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault();
     await axios
       .post(
-        process.env.NEXT_PUBLIC_API + "/createUser",
+        process.env.NEXT_PUBLIC_DB + "/createUser",
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
