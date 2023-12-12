@@ -1,7 +1,8 @@
 "use client";
-import axios from "axios";
+
 import React, { useEffect, useState } from "react";
 import MapItems from "./MapItems";
+import axios from "axios";
 
 const HomePAGE = () => {
   const [allFilms, setAllFilms] = useState([]);
