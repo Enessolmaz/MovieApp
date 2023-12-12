@@ -12,7 +12,6 @@ const Register = () => {
   const toastSuccess = (msg) => toast.success(msg);
   const toastError = (msg) => toast.error(msg);
 
-  const url = process.env.NEXT_PUBLIC_API + "/createUser";
 
   const handleUser = (e) => {
     const { name, value } = e.target;
@@ -45,7 +44,7 @@ const Register = () => {
 
   return (
     <div className="flex flex-col gap-6 items-center justify-center w-full h-full  ">
-      {url}
+ 
       <ToastContainer
         position="top-center"
         autoClose={250}
