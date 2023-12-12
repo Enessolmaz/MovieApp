@@ -79,7 +79,7 @@ const Register = () => {
           />
           <input
             className="text-white bg-inherit outline-none px-2"
-            type="text"
+            type="password"
             name="password"
             onChange={handleUser}
             required
